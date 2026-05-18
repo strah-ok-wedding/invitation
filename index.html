@@ -22,96 +22,434 @@
     </head>
 
     <body>
-  <div class="kola-loader invite-loader invite-loader--variant-a" aria-label="Загрузка приглашения" role="status">
-    <div class="invite-loader-scene" aria-hidden="true">
-      <div class="invite-note">
-        <div class="invite-note__icon">♡</div>
-        <div>
-          <p class="invite-note__title">Новое уведомление</p>
-          <p class="invite-note__text">Вам приглашение от Оли и Кости</p>
-        </div>
-      </div>
-
-      <svg class="invite-decor" viewBox="0 0 470 720" aria-hidden="true">
-        <path class="invite-decor__line invite-decor__line--a" d="M83 182 C126 126, 174 128, 201 163 C224 193, 188 219, 161 194 C139 173, 161 151, 184 167" />
-        <path class="invite-decor__line invite-decor__line--b" d="M382 171 C344 128, 299 135, 282 170 C269 198, 303 213, 327 193 C348 176, 330 154, 309 169" />
-        <path class="invite-decor__line invite-decor__line--c" d="M79 506 C118 482, 151 496, 162 529 C171 556, 140 570, 119 548" />
-        <path class="invite-decor__line invite-decor__line--d" d="M372 503 C337 485, 302 498, 293 529 C285 557, 317 569, 337 548" />
-      </svg>
-
-      <div class="invite-envelope-wrap">
-        <div class="invite-envelope-shadow"></div>
-
-        <div class="invite-envelope">
-          <div class="invite-env-back"></div>
-          <div class="invite-env-liner"></div>
-          <div class="invite-env-flap"></div>
-
-          <article class="invite-photo-card" aria-label="Приглашение на свадьбу Оли и Кости, 19.06.2026">
-            <div class="invite-photo-frame">
-              <img src="./assets/img/loader/postcard.jpg" alt="Оля и Костя" />
-            </div>
-
-            <div class="invite-card-copy">
-              <p class="invite-card-kicker">Приглашение</p>
-              <h2 class="invite-card-title">на свадьбу</h2>
-              <p class="invite-card-names">Оли и Кости</p>
-              <p class="invite-card-date">19.06.2026</p>
-            </div>
-          </article>
-
-          <div class="invite-env-front"></div>
-
-          <div class="invite-seal" aria-label="Штамп ОК">
-            <div class="invite-seal-main">ОК</div>
-
-            <svg class="invite-seal-cracks" viewBox="0 0 90 90" aria-hidden="true">
-              <path d="M44 13 L38 33 L47 44 L39 63" />
-              <path d="M29 27 L40 35 L32 45" />
-              <path d="M59 25 L49 42 L62 51" />
-              <path d="M51 46 L58 66" />
-            </svg>
-
-            <div class="invite-seal-fragments">
-              <span></span><span></span><span></span><span></span><span></span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="invite-opening-status" aria-label="Приглашение открывается">
-        <span>Приглашение открывается...</span>
-
-        <svg class="invite-branch-loader" viewBox="0 0 310 50" aria-hidden="true">
-          <path class="invite-branch-main" d="M18 34 C55 27, 93 28, 129 24 C164 20, 190 12, 222 16 C247 19, 267 26, 292 17" />
-          <path class="invite-branch-side" d="M51 29 C45 18, 34 13, 23 15" />
-          <path class="invite-branch-side" d="M82 27 C75 15, 64 11, 54 14" />
-          <path class="invite-branch-side" d="M173 16 C168 7, 158 4, 148 8" />
-          <path class="invite-branch-side" d="M238 18 C246 8, 259 6, 270 12" />
-          <ellipse class="invite-branch-leaf" cx="42" cy="20" rx="7" ry="4" />
-          <ellipse class="invite-branch-leaf" cx="70" cy="17" rx="7" ry="4" />
-          <ellipse class="invite-branch-leaf" cx="160" cy="8" rx="7" ry="4" />
-          <ellipse class="invite-branch-leaf" cx="257" cy="10" rx="7" ry="4" />
-        </svg>
-      </div>
-    </div>
-  </div>
-
-<main class="page">
-            <section class="hero block block-hero" id="hero" data-reveal>
-                <div class="hero__image-wrap">
-                    <img
-                        class="hero__image"
-                        src="./assets/img/couple/hero.jpg"
-                        alt="Костя и Оля"
-                    />
+        <div
+            class="kola-loader invite-loader invite-loader--variant-a"
+            aria-label="Загрузка приглашения"
+            role="status"
+        >
+            <div class="invite-loader-scene" aria-hidden="true">
+                <div class="invite-note">
+                    <div class="invite-note__icon">♡</div>
+                    <div>
+                        <p class="invite-note__title">Новое уведомление</p>
+                        <p class="invite-note__text">
+                            Вам приглашение от Оли и Кости
+                        </p>
+                    </div>
                 </div>
 
+                <svg
+                    class="invite-decor"
+                    viewBox="0 0 470 720"
+                    aria-hidden="true"
+                >
+                    <path
+                        class="invite-decor__line invite-decor__line--a"
+                        d="M83 182 C126 126, 174 128, 201 163 C224 193, 188 219, 161 194 C139 173, 161 151, 184 167"
+                    />
+                    <path
+                        class="invite-decor__line invite-decor__line--b"
+                        d="M382 171 C344 128, 299 135, 282 170 C269 198, 303 213, 327 193 C348 176, 330 154, 309 169"
+                    />
+                    <path
+                        class="invite-decor__line invite-decor__line--c"
+                        d="M79 506 C118 482, 151 496, 162 529 C171 556, 140 570, 119 548"
+                    />
+                    <path
+                        class="invite-decor__line invite-decor__line--d"
+                        d="M372 503 C337 485, 302 498, 293 529 C285 557, 317 569, 337 548"
+                    />
+                </svg>
+
+                <div class="invite-envelope-wrap">
+                    <div class="invite-envelope-shadow"></div>
+
+                    <div class="invite-envelope">
+                        <div class="invite-env-back"></div>
+                        <div class="invite-env-liner"></div>
+                        <div class="invite-env-flap"></div>
+
+                        <article
+                            class="invite-photo-card"
+                            aria-label="Приглашение на свадьбу Оли и Кости, 19.06.2026"
+                        >
+                            <div class="invite-photo-frame">
+                                <img
+                                    src="./assets/img/loader/postcard.jpg"
+                                    alt="Оля и Костя"
+                                />
+                            </div>
+
+                            <div class="invite-card-copy">
+                                <p class="invite-card-kicker">Приглашение</p>
+                                <h2 class="invite-card-title">на свадьбу</h2>
+                                <p class="invite-card-names">Оли и Кости</p>
+                                <p class="invite-card-date">19.06.2026</p>
+                            </div>
+                        </article>
+
+                        <div class="invite-env-front"></div>
+
+                        <div class="invite-seal" aria-label="Штамп ОК">
+                            <div class="invite-seal-main">ОК</div>
+
+                            <svg
+                                class="invite-seal-cracks"
+                                viewBox="0 0 90 90"
+                                aria-hidden="true"
+                            >
+                                <path d="M44 13 L38 33 L47 44 L39 63" />
+                                <path d="M29 27 L40 35 L32 45" />
+                                <path d="M59 25 L49 42 L62 51" />
+                                <path d="M51 46 L58 66" />
+                            </svg>
+
+                            <div class="invite-seal-fragments">
+                                <span></span><span></span><span></span
+                                ><span></span><span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="invite-opening-status"
+                    aria-label="Приглашение открывается"
+                >
+                    <span>Приглашение открывается...</span>
+
+                    <svg
+                        class="invite-branch-loader"
+                        viewBox="0 0 310 50"
+                        aria-hidden="true"
+                    >
+                        <path
+                            class="invite-branch-main"
+                            d="M18 34 C55 27, 93 28, 129 24 C164 20, 190 12, 222 16 C247 19, 267 26, 292 17"
+                        />
+                        <path
+                            class="invite-branch-side"
+                            d="M51 29 C45 18, 34 13, 23 15"
+                        />
+                        <path
+                            class="invite-branch-side"
+                            d="M82 27 C75 15, 64 11, 54 14"
+                        />
+                        <path
+                            class="invite-branch-side"
+                            d="M173 16 C168 7, 158 4, 148 8"
+                        />
+                        <path
+                            class="invite-branch-side"
+                            d="M238 18 C246 8, 259 6, 270 12"
+                        />
+                        <ellipse
+                            class="invite-branch-leaf"
+                            cx="42"
+                            cy="20"
+                            rx="7"
+                            ry="4"
+                        />
+                        <ellipse
+                            class="invite-branch-leaf"
+                            cx="70"
+                            cy="17"
+                            rx="7"
+                            ry="4"
+                        />
+                        <ellipse
+                            class="invite-branch-leaf"
+                            cx="160"
+                            cy="8"
+                            rx="7"
+                            ry="4"
+                        />
+                        <ellipse
+                            class="invite-branch-leaf"
+                            cx="257"
+                            cy="10"
+                            rx="7"
+                            ry="4"
+                        />
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="ambient-bg" aria-hidden="true">
+            <img src="./assets/img/couple/hero.jpg" alt="" />
+
+            <svg
+                class="ambient-botanical ambient-botanical--left"
+                viewBox="0 0 220 620"
+            >
+                <path
+                    class="ambient-vine"
+                    d="M105 18 C58 88, 52 145, 91 214 C130 284, 118 353, 78 417 C43 474, 56 545, 112 604"
+                />
+                <path class="ambient-stem" d="M86 158 C54 141, 35 116, 26 82" />
+                <path
+                    class="ambient-stem"
+                    d="M100 250 C66 247, 39 231, 18 202"
+                />
+                <path
+                    class="ambient-stem"
+                    d="M91 438 C58 433, 35 414, 21 382"
+                />
+                <ellipse
+                    class="ambient-leaf ambient-leaf--a"
+                    cx="34"
+                    cy="96"
+                    rx="13"
+                    ry="7"
+                />
+                <ellipse
+                    class="ambient-leaf ambient-leaf--b"
+                    cx="31"
+                    cy="214"
+                    rx="14"
+                    ry="7"
+                />
+                <ellipse
+                    class="ambient-leaf ambient-leaf--c"
+                    cx="35"
+                    cy="396"
+                    rx="14"
+                    ry="7"
+                />
+            </svg>
+
+            <svg
+                class="ambient-botanical ambient-botanical--right"
+                viewBox="0 0 220 620"
+            >
+                <path
+                    class="ambient-vine"
+                    d="M104 20 C151 91, 158 150, 119 219 C82 286, 96 350, 136 417 C174 480, 162 548, 106 604"
+                />
+                <path
+                    class="ambient-stem"
+                    d="M122 160 C154 140, 176 112, 188 78"
+                />
+                <path
+                    class="ambient-stem"
+                    d="M111 284 C145 278, 172 259, 195 228"
+                />
+                <path
+                    class="ambient-stem"
+                    d="M133 440 C166 432, 187 410, 199 377"
+                />
+                <ellipse
+                    class="ambient-leaf ambient-leaf--a"
+                    cx="180"
+                    cy="92"
+                    rx="13"
+                    ry="7"
+                />
+                <ellipse
+                    class="ambient-leaf ambient-leaf--b"
+                    cx="184"
+                    cy="238"
+                    rx="14"
+                    ry="7"
+                />
+                <ellipse
+                    class="ambient-leaf ambient-leaf--c"
+                    cx="186"
+                    cy="392"
+                    rx="14"
+                    ry="7"
+                />
+            </svg>
+        </div>
+
+        <main class="page">
+            <section
+                class="hero block block-hero hero-poster-section"
+                id="hero"
+                data-reveal
+            >
                 <div class="hero__topline">Приглашение на свадьбу</div>
 
-                <div class="hero__bottom">
-                    <h1>Костя<br />и Оля</h1>
-                    <div class="hero__date">19 июня 2026</div>
+                <div class="hero-poster">
+                    <div class="hero__image-wrap hero-poster__photo">
+                        <img
+                            class="hero__image"
+                            src="./assets/img/couple/hero.jpg"
+                            alt="Оля и Костя"
+                        />
+                    </div>
+
+                    <div class="hero-poster__names">
+                        <p class="hero-poster__date">19.06.2026</p>
+                        <h1>Оля<br />и Костя</h1>
+                    </div>
+
+                    <div class="hero-floral-wrap" aria-hidden="true">
+                        <svg class="hero-floral" viewBox="0 0 430 190">
+                            <path
+                                class="hero-floral__stem"
+                                d="M33 139 C88 118, 127 119, 178 135 C228 150, 276 148, 397 112"
+                            />
+                            <path
+                                class="hero-floral__stem hero-floral__stem--soft"
+                                d="M54 156 C104 132, 153 132, 202 149 C249 165, 305 158, 376 132"
+                            />
+
+                            <ellipse
+                                class="hero-leaf hero-leaf--dark"
+                                cx="86"
+                                cy="132"
+                                rx="48"
+                                ry="22"
+                                transform="rotate(-21 86 132)"
+                            />
+                            <ellipse
+                                class="hero-leaf hero-leaf--green"
+                                cx="137"
+                                cy="121"
+                                rx="44"
+                                ry="20"
+                                transform="rotate(18 137 121)"
+                            />
+                            <ellipse
+                                class="hero-leaf hero-leaf--dark"
+                                cx="285"
+                                cy="129"
+                                rx="48"
+                                ry="22"
+                                transform="rotate(18 285 129)"
+                            />
+                            <ellipse
+                                class="hero-leaf hero-leaf--green"
+                                cx="334"
+                                cy="111"
+                                rx="43"
+                                ry="19"
+                                transform="rotate(-24 334 111)"
+                            />
+
+                            <g
+                                class="hero-flower hero-flower--left"
+                                transform="translate(166 88)"
+                            >
+                                <circle
+                                    class="hero-flower__petal hero-flower__petal--ivory"
+                                    cx="-19"
+                                    cy="-3"
+                                    r="26"
+                                />
+                                <circle
+                                    class="hero-flower__petal hero-flower__petal--ivory"
+                                    cx="16"
+                                    cy="-10"
+                                    r="28"
+                                />
+                                <circle
+                                    class="hero-flower__petal hero-flower__petal--champagne"
+                                    cx="-2"
+                                    cy="17"
+                                    r="25"
+                                />
+                                <circle
+                                    class="hero-flower__core"
+                                    cx="0"
+                                    cy="0"
+                                    r="10"
+                                />
+                            </g>
+
+                            <g
+                                class="hero-flower hero-flower--center"
+                                transform="translate(228 100)"
+                            >
+                                <circle
+                                    class="hero-flower__petal hero-flower__petal--sage"
+                                    cx="-23"
+                                    cy="-5"
+                                    r="30"
+                                />
+                                <circle
+                                    class="hero-flower__petal hero-flower__petal--ivory"
+                                    cx="18"
+                                    cy="-11"
+                                    r="32"
+                                />
+                                <circle
+                                    class="hero-flower__petal hero-flower__petal--champagne"
+                                    cx="-5"
+                                    cy="21"
+                                    r="28"
+                                />
+                                <circle
+                                    class="hero-flower__core"
+                                    cx="0"
+                                    cy="0"
+                                    r="11"
+                                />
+                            </g>
+
+                            <g
+                                class="hero-flower hero-flower--right"
+                                transform="translate(293 81)"
+                            >
+                                <circle
+                                    class="hero-flower__petal hero-flower__petal--dark"
+                                    cx="-20"
+                                    cy="-4"
+                                    r="29"
+                                />
+                                <circle
+                                    class="hero-flower__petal hero-flower__petal--sage"
+                                    cx="17"
+                                    cy="-8"
+                                    r="30"
+                                />
+                                <circle
+                                    class="hero-flower__petal hero-flower__petal--ivory"
+                                    cx="-3"
+                                    cy="20"
+                                    r="27"
+                                />
+                                <circle
+                                    class="hero-flower__core"
+                                    cx="0"
+                                    cy="0"
+                                    r="10"
+                                />
+                            </g>
+
+                            <g
+                                class="hero-flower hero-flower--small"
+                                transform="translate(102 98)"
+                            >
+                                <circle
+                                    class="hero-flower__petal hero-flower__petal--sage"
+                                    cx="-13"
+                                    cy="-4"
+                                    r="18"
+                                />
+                                <circle
+                                    class="hero-flower__petal hero-flower__petal--ivory"
+                                    cx="11"
+                                    cy="-7"
+                                    r="19"
+                                />
+                                <circle
+                                    class="hero-flower__petal hero-flower__petal--champagne"
+                                    cx="-2"
+                                    cy="12"
+                                    r="17"
+                                />
+                                <circle
+                                    class="hero-flower__core"
+                                    cx="0"
+                                    cy="0"
+                                    r="7"
+                                />
+                            </g>
+                        </svg>
+                    </div>
                 </div>
 
                 <a class="scroll-cue" href="#date">Листайте вниз</a>
@@ -228,23 +566,23 @@
                 <div class="venue-grid">
                     <article class="venue-card" data-reveal>
                         <div class="venue-card__media venue-card__media--auto">
-            <img
-              class="venue-card__image venue-card__image--primary"
-              src="./assets/img/venue/zags.jpg"
-              alt="Фото здания ЗАГСа"
-            />
-            <img
-              class="venue-card__image venue-card__image--secondary"
-              src="./assets/img/venue/zags-inside.jpg"
-              alt="Фото внутри ЗАГСа"
-            />
-          </div>
+                            <img
+                                class="venue-card__image venue-card__image--primary"
+                                src="./assets/img/venue/zags.jpg"
+                                alt="Фото здания ЗАГСа"
+                            />
+                            <img
+                                class="venue-card__image venue-card__image--secondary"
+                                src="./assets/img/venue/zags-inside.jpg"
+                                alt="Фото внутри ЗАГСа"
+                            />
+                        </div>
 
                         <div class="venue-card__body">
                             <h3>ЗАГС</h3>
                             <p>
-                                Адрес: просп. Красной Армии, 25,<br />
-                                Санкт-Петербург
+                                Адрес: просп. Красной Армии, 188,<br />
+                                Сергиев Посад
                             </p>
                             <a
                                 class="button button--dark"
@@ -259,27 +597,26 @@
 
                     <article class="venue-card" data-reveal>
                         <div class="venue-card__media venue-card__media--auto">
-            <img
-              class="venue-card__image venue-card__image--primary"
-              src="./assets/img/venue/restaurant.jpg"
-              alt="Фото здания ресторана"
-            />
-            <img
-              class="venue-card__image venue-card__image--secondary"
-              src="./assets/img/venue/restaurant-inside.jpg"
-              alt="Фото внутри ресторана"
-            />
-          </div>
+                            <img
+                                class="venue-card__image venue-card__image--primary"
+                                src="./assets/img/venue/restaurant.jpg"
+                                alt="Фото здания ресторана"
+                            />
+                            <img
+                                class="venue-card__image venue-card__image--secondary"
+                                src="./assets/img/venue/restaurant-inside.jpg"
+                                alt="Фото внутри ресторана"
+                            />
+                        </div>
 
                         <div class="venue-card__body">
                             <h3>
                                 Ресторан в гостиничном комплексе «Царская
-                                Усадьба»
+                                Деревня»
                             </h3>
                             <p>
-                                Зал «Романио»<br />
-                                Адрес: ул. Лесная, 14/2, Санкт-Петербург,<br />
-                                Питерская область
+                                Зал «Романов»<br />
+                                Адрес: ул. Митькина, 14/2, Сергиев Посад <br />
                             </p>
                             <a
                                 class="button button--dark"
@@ -295,134 +632,213 @@
             </section>
 
             <section class="block dress-block" id="dress-code" data-reveal>
-      <div class="section-heading">
-        <h2>Дресс-код</h2>
-        <p>
-          В этот день все правила отменяются. Приходите в удобной одежде для
-          вас или в том, что хотите выгулять.
-        </p>
-      </div>
+                <div class="section-heading">
+                    <h2>Дресс-код</h2>
+                    <p>
+                        В этот день все правила отменяются. Приходите в удобной
+                        одежде для вас или в том, что хотите выгулять.
+                    </p>
+                </div>
 
-      <div class="dress-interactive">
-        <div class="dress-preview">
-          <div class="look-card" data-tone="sage">
-            <span class="look-label">cocktail</span>
+                <div class="dress-clean">
+                    <div
+                        class="dress-clean__palette"
+                        aria-label="Цвета и настроение"
+                    >
+                        <article class="dress-chip dress-chip--ivory">
+                            <span></span>
+                            <div>
+                                <b>Ivory</b>
+                                <small>мягкий светлый</small>
+                            </div>
+                        </article>
 
-            <div class="look-figure" aria-hidden="true">
-              <i class="look-head"></i>
-              <i class="look-neck"></i>
-              <i class="look-body"></i>
-              <i class="look-arm look-arm--left"></i>
-              <i class="look-arm look-arm--right"></i>
-              <i class="look-leg look-leg--left"></i>
-              <i class="look-leg look-leg--right"></i>
-              <i class="look-shadow"></i>
-            </div>
+                        <article class="dress-chip dress-chip--champagne">
+                            <span></span>
+                            <div>
+                                <b>Champagne</b>
+                                <small>тёплый праздничный</small>
+                            </div>
+                        </article>
 
-            <p class="look-caption">Нажмите на цвет ниже</p>
-          </div>
+                        <article class="dress-chip dress-chip--sage">
+                            <span></span>
+                            <div>
+                                <b>Sage</b>
+                                <small>природный спокойный</small>
+                            </div>
+                        </article>
 
-          <div class="tone-controls" aria-label="Выбор цвета образа">
-            <button class="tone-button tone-button--cream" type="button" data-tone="cream" aria-label="Цвет ivory"></button>
-            <button class="tone-button tone-button--champagne" type="button" data-tone="champagne" aria-label="Цвет champagne"></button>
-            <button class="tone-button tone-button--sage is-active" type="button" data-tone="sage" aria-label="Цвет sage"></button>
-            <button class="tone-button tone-button--olive" type="button" data-tone="olive" aria-label="Цвет olive"></button>
-            <button class="tone-button tone-button--cola" type="button" data-tone="cola" aria-label="Цвет kola accent"></button>
-          </div>
-        </div>
+                        <article class="dress-chip dress-chip--olive">
+                            <span></span>
+                            <div>
+                                <b>Olive</b>
+                                <small>глубокий зелёный</small>
+                            </div>
+                        </article>
 
-        <div class="dress-copy">
-          <article>
-            <span>01</span>
-            <h3>Свободный образ</h3>
-            <p>Платье, костюм, рубашка или ваш любимый праздничный комплект.</p>
-          </article>
+                        <article class="dress-chip dress-chip--cola">
+                            <span></span>
+                            <div>
+                                <b>Kola accent</b>
+                                <small>акцентный тёмный</small>
+                            </div>
+                        </article>
+                    </div>
 
-          <article>
-            <span>02</span>
-            <h3>Мягкое настроение</h3>
-            <p>Светлые, тёплые и природные оттенки отлично поддержат атмосферу.</p>
-          </article>
+                    <div class="dress-clean__styles">
+                        <article>
+                            <span>01</span>
+                            <h3>Cocktail</h3>
+                            <p>
+                                Лёгкий праздничный образ без ощущения строгого
+                                дресс-кода.
+                            </p>
+                        </article>
 
-          <article>
-            <span>03</span>
-            <h3>Главное — комфорт</h3>
-            <p>Нам важно, чтобы вам было удобно, красиво и радостно.</p>
-          </article>
-        </div>
-      </div>
-    </section>
+                        <article>
+                            <span>02</span>
+                            <h3>Smart casual</h3>
+                            <p>
+                                Костюм, рубашка, платье или то, в чём вам
+                                красиво и удобно.
+                            </p>
+                        </article>
 
-    <section class="block details-block" id="details" data-reveal>
-      <div class="section-heading">
-        <h2>Детали</h2>
-      </div>
+                        <article>
+                            <span>03</span>
+                            <h3>Soft classic</h3>
+                            <p>
+                                Спокойные оттенки, аккуратные детали и комфорт
+                                на весь вечер.
+                            </p>
+                        </article>
+                    </div>
+                </div>
+            </section>
 
-      <div class="details-elegant">
-        <article class="detail-elegant-card detail-elegant-card--book" data-reveal>
-          <div class="detail-elegant-icon" aria-hidden="true">
-            <svg viewBox="0 0 120 120">
-              <path class="detail-line detail-line--main" d="M24 32 C40 24 52 26 60 38 C68 26 80 24 96 32 L96 88 C80 80 68 82 60 94 C52 82 40 80 24 88 Z" />
-              <path class="detail-line" d="M60 38 L60 94" />
-              <path class="detail-line detail-line--thin" d="M34 46 C44 42 51 44 56 50" />
-              <path class="detail-line detail-line--thin" d="M34 59 C44 55 51 57 56 63" />
-              <path class="detail-line detail-line--thin" d="M86 46 C76 42 69 44 64 50" />
-              <path class="detail-line detail-line--thin" d="M86 59 C76 55 69 57 64 63" />
-            </svg>
-          </div>
+            <section class="block details-block" id="details" data-reveal>
+                <div class="section-heading">
+                    <h2>Детали</h2>
+                </div>
 
-          <div class="detail-elegant-content">
-            <h3>Книга вместо цветов</h3>
-            <p>
-              Мы будем рады, если вместо цветов вы подарите вашу любимую книгу
-              для нашей семейной библиотеки.
-            </p>
-          </div>
-        </article>
+                <div class="details-elegant">
+                    <article
+                        class="detail-elegant-card detail-elegant-card--book"
+                        data-reveal
+                    >
+                        <div class="detail-elegant-icon" aria-hidden="true">
+                            <svg viewBox="0 0 120 120">
+                                <path
+                                    class="detail-line detail-line--main"
+                                    d="M24 32 C40 24 52 26 60 38 C68 26 80 24 96 32 L96 88 C80 80 68 82 60 94 C52 82 40 80 24 88 Z"
+                                />
+                                <path class="detail-line" d="M60 38 L60 94" />
+                                <path
+                                    class="detail-line detail-line--thin"
+                                    d="M34 46 C44 42 51 44 56 50"
+                                />
+                                <path
+                                    class="detail-line detail-line--thin"
+                                    d="M34 59 C44 55 51 57 56 63"
+                                />
+                                <path
+                                    class="detail-line detail-line--thin"
+                                    d="M86 46 C76 42 69 44 64 50"
+                                />
+                                <path
+                                    class="detail-line detail-line--thin"
+                                    d="M86 59 C76 55 69 57 64 63"
+                                />
+                            </svg>
+                        </div>
 
-        <article class="detail-elegant-card detail-elegant-card--flowers" data-reveal>
-          <div class="detail-elegant-icon" aria-hidden="true">
-            <svg viewBox="0 0 120 120">
-              <path class="detail-line detail-line--stem" d="M60 96 C56 76 52 62 46 46" />
-              <path class="detail-line detail-line--stem" d="M62 96 C68 76 76 60 88 42" />
-              <path class="detail-line detail-line--stem" d="M58 96 C44 78 34 66 24 54" />
-              <circle class="detail-flower detail-flower--sage" cx="46" cy="42" r="9" />
-              <circle class="detail-flower detail-flower--champagne" cx="88" cy="38" r="9" />
-              <circle class="detail-flower detail-flower--cream" cx="24" cy="52" r="8" />
-              <circle class="detail-flower detail-flower--cola" cx="64" cy="56" r="8" />
-            </svg>
-          </div>
+                        <div class="detail-elegant-content">
+                            <h3>Книга вместо цветов</h3>
+                            <p>
+                                Мы будем рады, если вместо цветов вы подарите
+                                вашу любимую книгу для нашей семейной
+                                библиотеки.
+                            </p>
+                        </div>
+                    </article>
 
-          <div class="detail-elegant-content">
-            <h3>Цветочная подписка</h3>
-            <p>
-              Или можно поучаствовать в цветочной подписке — общем фонде на
-              свежие букеты после свадьбы.
-            </p>
+                    <article
+                        class="detail-elegant-card detail-elegant-card--flowers"
+                        data-reveal
+                    >
+                        <div class="detail-elegant-icon" aria-hidden="true">
+                            <svg viewBox="0 0 120 120">
+                                <path
+                                    class="detail-line detail-line--stem"
+                                    d="M60 96 C56 76 52 62 46 46"
+                                />
+                                <path
+                                    class="detail-line detail-line--stem"
+                                    d="M62 96 C68 76 76 60 88 42"
+                                />
+                                <path
+                                    class="detail-line detail-line--stem"
+                                    d="M58 96 C44 78 34 66 24 54"
+                                />
+                                <circle
+                                    class="detail-flower detail-flower--sage"
+                                    cx="46"
+                                    cy="42"
+                                    r="9"
+                                />
+                                <circle
+                                    class="detail-flower detail-flower--champagne"
+                                    cx="88"
+                                    cy="38"
+                                    r="9"
+                                />
+                                <circle
+                                    class="detail-flower detail-flower--cream"
+                                    cx="24"
+                                    cy="52"
+                                    r="8"
+                                />
+                                <circle
+                                    class="detail-flower detail-flower--cola"
+                                    cx="64"
+                                    cy="56"
+                                    r="8"
+                                />
+                            </svg>
+                        </div>
 
-            <a
-              class="button button--light"
-              href="PASTE_FLOWER_SUBSCRIPTION_LINK_HERE"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Открыть ссылку
-            </a>
-          </div>
+                        <div class="detail-elegant-content">
+                            <h3>Цветочная подписка</h3>
+                            <p>
+                                Или можно поучаствовать в цветочной подписке —
+                                общем фонде на свежие букеты после свадьбы.
+                            </p>
 
-          <div class="qr-frame detail-elegant-qr">
-            <img
-              src="./assets/img/details/flowers-qr.jpg"
-              alt="QR-код для цветочной подписки"
-            />
-          </div>
-        </article>
-      </div>
-    </section>
+                            <a
+                                class="button button--light"
+                                href="PASTE_FLOWER_SUBSCRIPTION_LINK_HERE"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Открыть ссылку
+                            </a>
+                        </div>
 
-    <section class="block rsvp-block" id="rsvp" data-reveal>
+                        <div class="qr-frame detail-elegant-qr">
+                            <img
+                                src="./assets/img/details/flowers-qr.jpg"
+                                alt="QR-код для цветочной подписки"
+                            />
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="block rsvp-block" id="rsvp" data-reveal>
                 <div class="rsvp-shell">
-                    <div class="section-heading section-heading--center">                        <h2>Анкета гостя</h2>
+                    <div class="section-heading section-heading--center">
+                        <h2>Анкета гостя</h2>
                         <p>
                             Пожалуйста подтвердите присутствие на нашем
                             празднике до
@@ -571,6 +987,6 @@
         </main>
 
         <script src="./assets/vendor/gsap.min.js"></script>
-  <script src="./script.js"></script>
+        <script src="./script.js"></script>
     </body>
 </html>
