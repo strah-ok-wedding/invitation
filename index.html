@@ -265,72 +265,43 @@
 
         <main class="page">
             <section class="hero block block-hero hero-slideshow-section" id="hero" data-reveal>
-      <div class="hero__topline">Приглашение на свадьбу</div>
+                <div class="hero__topline">Приглашение на свадьбу</div>
 
-      <div class="hero-slideshow-card">
-        <div class="hero-slideshow" aria-label="Фотографии Оли и Кости">
-          <figure class="hero-slide hero-slide--one">
-            <img src="./assets/img/hero/hero-01.jpg" alt="Оля и Костя" />
-          </figure>
+                <div class="hero-slideshow-card hero-clean-card">
+                    <div class="hero-slideshow hero-clean-slideshow" aria-label="Фотографии Оли и Кости">
+                        <figure class="hero-slide hero-slide--one">
+                            <img src="./assets/img/hero/hero-01.jpg" alt="Оля и Костя" />
+                        </figure>
 
-          <figure class="hero-slide hero-slide--two">
-            <img src="./assets/img/hero/hero-02.jpg" alt="Оля и Костя" />
-          </figure>
+                        <figure class="hero-slide hero-slide--two">
+                            <img src="./assets/img/hero/hero-02.jpg" alt="Оля и Костя" />
+                        </figure>
 
-          <figure class="hero-slide hero-slide--three">
-            <img src="./assets/img/hero/hero-03.jpg" alt="Оля и Костя" />
-          </figure>
-        </div>
+                        <figure class="hero-slide hero-slide--three">
+                            <img src="./assets/img/hero/hero-03.jpg" alt="Оля и Костя" />
+                        </figure>
 
-        <div class="hero-slideshow-copy">
-          <p class="hero-slideshow-date">19.06.2026</p>          <img
-            class="hero-floral-ornament-svg"
-            src="assets/img/hero/hero-floral-ornament.svg"
-            alt=""
-            aria-hidden="true"
-          >
+                        <div class="hero-photo-signature" aria-hidden="true">
+                            <img
+                                class="hero-photo-signature__ornament"
+                                src="./assets/img/hero/hero-floral-ornament.svg"
+                                alt=""
+                            />
 
-          <h1>Оля<br />и Костя</h1>
-        </div>
+                            <p class="hero-photo-signature__date">19.06.2026</p>
 
-        <div class="hero-floral-stage" aria-hidden="true">
-          <svg class="hero-floral hero-floral--slideshow" viewBox="0 0 460 210">
-            <path class="hero-floral__stem" d="M28 148 C78 124, 128 119, 178 138 C224 156, 282 157, 426 112" />
-            <path class="hero-floral__stem hero-floral__stem--soft" d="M45 169 C110 139, 166 141, 218 158 C274 177, 329 164, 405 136" />
+                            <h1 class="hero-photo-signature__names">
+                                Оля<br />
+                                <span>и Костя</span>
+                            </h1>
+                        </div>
+                    </div>
+                </div>
 
-            <ellipse class="hero-leaf hero-leaf--dark" cx="82" cy="145" rx="52" ry="23" transform="rotate(-22 82 145)" />
-            <ellipse class="hero-leaf hero-leaf--green" cx="137" cy="127" rx="48" ry="21" transform="rotate(18 137 127)" />
-            <ellipse class="hero-leaf hero-leaf--dark" cx="295" cy="142" rx="54" ry="24" transform="rotate(18 295 142)" />
-            <ellipse class="hero-leaf hero-leaf--green" cx="354" cy="116" rx="47" ry="20" transform="rotate(-24 354 116)" />
+                <a class="scroll-cue" href="#date">Листайте вниз</a>
+            </section>
 
-            <g class="hero-flower hero-flower--left" transform="translate(156 98)">
-              <circle class="hero-flower__petal hero-flower__petal--ivory" cx="-21" cy="-4" r="27" />
-              <circle class="hero-flower__petal hero-flower__petal--ivory" cx="17" cy="-12" r="29" />
-              <circle class="hero-flower__petal hero-flower__petal--champagne" cx="-2" cy="18" r="26" />
-              <circle class="hero-flower__core" cx="0" cy="0" r="10" />
-            </g>
-
-            <g class="hero-flower hero-flower--center" transform="translate(226 111)">
-              <circle class="hero-flower__petal hero-flower__petal--sage" cx="-25" cy="-6" r="32" />
-              <circle class="hero-flower__petal hero-flower__petal--ivory" cx="20" cy="-13" r="34" />
-              <circle class="hero-flower__petal hero-flower__petal--champagne" cx="-6" cy="23" r="30" />
-              <circle class="hero-flower__core" cx="0" cy="0" r="11" />
-            </g>
-
-            <g class="hero-flower hero-flower--right" transform="translate(304 88)">
-              <circle class="hero-flower__petal hero-flower__petal--dark" cx="-22" cy="-5" r="30" />
-              <circle class="hero-flower__petal hero-flower__petal--sage" cx="18" cy="-9" r="31" />
-              <circle class="hero-flower__petal hero-flower__petal--ivory" cx="-3" cy="21" r="28" />
-              <circle class="hero-flower__core" cx="0" cy="0" r="10" />
-            </g>
-          </svg>
-        </div>
-      </div>
-
-      <a class="scroll-cue" href="#date">Листайте вниз</a>
-    </section>
-
-    <section class="block date-block" id="date" data-reveal>
+<section class="block date-block" id="date" data-reveal>
                 <div class="section-heading">
                     <h2>Дорогие родные и близкие!</h2>
                     <p>
@@ -860,7 +831,7 @@
                 <p>Будем счастливы разделить его вместе с вами.</p>
             </section>
         </main>
-  <!-- GSAP disabled for mobile test -->
+  <!-- GSAP disabled: native CSS loader is used for mobile stability -->
         <script src="./script.js"></script>
     </body>
 </html>
