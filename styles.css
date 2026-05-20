@@ -7974,3 +7974,211 @@ body:not(.gsap-loader-enabled) .invite-photo-card {
 }
 /* === KOLA HERO TOP LABELS V12 END === */
 
+/* === KOLA HERO TOP ALIGN V13 START === */
+/*
+  Top hero labels alignment:
+  - same top level;
+  - same font size;
+  - same line-height;
+  - no pill/background;
+  - directly on photo.
+*/
+
+.hero-slideshow-section .hero__topline,
+.hero-photo-signature__date {
+  top: clamp(22px, 4.8vw, 34px) !important;
+
+  padding: 0 !important;
+  margin: 0 !important;
+
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+
+  color: rgba(255, 248, 237, 0.96) !important;
+  font-family: "Kola Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+  font-size: clamp(0.76rem, 2.45vw, 0.92rem) !important;
+  font-weight: 850 !important;
+  line-height: 1 !important;
+  letter-spacing: 0.12em !important;
+
+  text-shadow:
+    0 2px 3px rgba(20, 31, 25, 0.68),
+    0 10px 24px rgba(20, 31, 25, 0.40) !important;
+}
+
+.hero-slideshow-section .hero__topline {
+  position: absolute !important;
+  left: clamp(18px, 5vw, 34px) !important;
+  right: auto !important;
+  transform: none !important;
+  z-index: 50 !important;
+
+  width: auto !important;
+  max-width: 52% !important;
+  text-align: left !important;
+  text-transform: uppercase !important;
+}
+
+.hero-photo-signature__date {
+  position: absolute !important;
+  right: clamp(18px, 5vw, 34px) !important;
+  left: auto !important;
+  bottom: auto !important;
+  transform: none !important;
+  z-index: 51 !important;
+
+  width: auto !important;
+  max-width: 42% !important;
+  text-align: right !important;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+/* Narrow phones: keep both captions compact and on one visual line. */
+@media (max-width: 390px) {
+  .hero-slideshow-section .hero__topline,
+  .hero-photo-signature__date {
+    top: 22px !important;
+    font-size: 0.72rem !important;
+    letter-spacing: 0.105em !important;
+  }
+
+  .hero-slideshow-section .hero__topline {
+    max-width: 50% !important;
+  }
+
+  .hero-photo-signature__date {
+    max-width: 44% !important;
+  }
+}
+
+/* Desktop/tablet: same baseline, a little more air from edges. */
+@media (min-width: 720px) {
+  .hero-slideshow-section .hero__topline,
+  .hero-photo-signature__date {
+    top: 30px !important;
+    font-size: 0.88rem !important;
+    line-height: 1 !important;
+  }
+
+  .hero-slideshow-section .hero__topline {
+    left: 34px !important;
+  }
+
+  .hero-photo-signature__date {
+    right: 34px !important;
+  }
+}
+/* === KOLA HERO TOP ALIGN V13 END === */
+
+/* === KOLA HERO TOP ROW V14 START === */
+/*
+  Fix top labels for real symmetry:
+  - both labels are now inside .hero-clean-slideshow;
+  - both are positioned from the same photo container;
+  - same top, same font-size, same line-height;
+  - no pills, no backgrounds.
+*/
+
+.hero-clean-slideshow {
+  --kola-hero-top-row-y: clamp(22px, 5vw, 34px);
+  --kola-hero-top-row-x: clamp(18px, 5vw, 34px);
+  position: relative !important;
+}
+
+/* Shared visual system for both top labels. */
+.hero-clean-slideshow > .hero__topline,
+.hero-clean-slideshow .hero-photo-signature__date {
+  position: absolute !important;
+  top: var(--kola-hero-top-row-y) !important;
+  bottom: auto !important;
+  z-index: 60 !important;
+
+  display: block !important;
+  width: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+
+  color: rgba(255, 248, 237, 0.97) !important;
+  font-family: "Kola Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+  font-size: clamp(0.78rem, 2.55vw, 0.94rem) !important;
+  font-weight: 850 !important;
+  line-height: 1 !important;
+  letter-spacing: 0.115em !important;
+
+  text-shadow:
+    0 2px 3px rgba(20, 31, 25, 0.72),
+    0 10px 24px rgba(20, 31, 25, 0.42) !important;
+}
+
+/* Left label. */
+.hero-clean-slideshow > .hero__topline {
+  left: var(--kola-hero-top-row-x) !important;
+  right: auto !important;
+  transform: none !important;
+  max-width: 54% !important;
+  text-align: left !important;
+  text-transform: uppercase !important;
+}
+
+/* Right date. */
+.hero-clean-slideshow .hero-photo-signature__date {
+  right: var(--kola-hero-top-row-x) !important;
+  left: auto !important;
+  transform: none !important;
+  max-width: 42% !important;
+  text-align: right !important;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+/* Old section-level rules must not move the topline anymore. */
+.hero-slideshow-section .hero__topline {
+  top: var(--kola-hero-top-row-y) !important;
+  left: var(--kola-hero-top-row-x) !important;
+  right: auto !important;
+  margin: 0 !important;
+}
+
+/* Very narrow phones: keep both labels on one row without collision. */
+@media (max-width: 390px) {
+  .hero-clean-slideshow {
+    --kola-hero-top-row-y: 22px;
+    --kola-hero-top-row-x: 18px;
+  }
+
+  .hero-clean-slideshow > .hero__topline,
+  .hero-clean-slideshow .hero-photo-signature__date {
+    font-size: 0.72rem !important;
+    letter-spacing: 0.095em !important;
+  }
+
+  .hero-clean-slideshow > .hero__topline {
+    max-width: 50% !important;
+  }
+
+  .hero-clean-slideshow .hero-photo-signature__date {
+    max-width: 44% !important;
+  }
+}
+
+@media (min-width: 720px) {
+  .hero-clean-slideshow {
+    --kola-hero-top-row-y: 30px;
+    --kola-hero-top-row-x: 34px;
+  }
+
+  .hero-clean-slideshow > .hero__topline,
+  .hero-clean-slideshow .hero-photo-signature__date {
+    font-size: 0.88rem !important;
+  }
+}
+/* === KOLA HERO TOP ROW V14 END === */
+
