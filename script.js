@@ -598,3 +598,105 @@ toneButtons.forEach((button) => {
 })();
 /* === KOLA HERO SLIDESHOW START AFTER LOADER V33 END === */
 
+/* === KOLA PAGE REVEAL AFTER LOADER V34 START === */
+/*
+  Reveals the page only after the invite loader has finished fading out.
+  This removes the hard visual cut between loader and the first hero block.
+*/
+(() => {
+  const body = document.body;
+  if (!body) return;
+
+  const armedClass = "page-reveal-armed";
+  const revealedClass = "page-revealed";
+
+  body.classList.remove(revealedClass);
+  body.classList.add(armedClass);
+
+  let revealed = false;
+
+  const revealPage = () => {
+    if (revealed) return;
+    revealed = true;
+
+    requestAnimationFrame(() => {
+      body.classList.add(revealedClass);
+    });
+  };
+
+  const getLoader = () =>
+    document.querySelector(".kola-loader, .invite-loader");
+
+  const isLoaderGone = (loader) => {
+    if (!loader) return true;
+
+    const styles = window.getComputedStyle(loader);
+
+    return (
+      loader.classList.contains("is-hidden") ||
+      styles.display === "none" ||
+      styles.visibility === "hidden" ||
+      Number(styles.opacity) <= 0.01
+    );
+  };
+
+  const armReveal = () => {
+    const loader = getLoader();
+
+    if (!loader) {
+      setTimeout(revealPage, 60);
+      return;
+    }
+
+    if (isLoaderGone(loader)) {
+      setTimeout(revealPage, 120);
+      return;
+    }
+
+    loader.addEventListener(
+      "transitionend",
+      (event) => {
+        if (
+          event.propertyName === "opacity" ||
+          event.propertyName === "visibility"
+        ) {
+          if (isLoaderGone(loader)) {
+            setTimeout(revealPage, 80);
+          }
+        }
+      },
+      { passive: true },
+    );
+
+    const observer = new MutationObserver(() => {
+      if (loader.classList.contains("is-hidden")) {
+        observer.disconnect();
+
+        /*
+          Wait for the CSS fade-out of the loader.
+          This prevents the page from appearing under a half-visible loader.
+        */
+        setTimeout(revealPage, 760);
+      }
+    });
+
+    observer.observe(loader, {
+      attributes: true,
+      attributeFilter: ["class", "style"],
+    });
+
+    /*
+      Safety fallback: loader animation is around 6.4s,
+      emergency loader fallback in previous code is around 8.6s.
+    */
+    setTimeout(revealPage, 8800);
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", armReveal, { once: true });
+  } else {
+    armReveal();
+  }
+})();
+/* === KOLA PAGE REVEAL AFTER LOADER V34 END === */
+

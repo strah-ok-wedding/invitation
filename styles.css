@@ -9468,3 +9468,67 @@ body.hero-slideshow-ready .hero-slide--three img {
 }
 /* === KOLA HERO START AFTER LOADER V33 END === */
 
+/* === KOLA PAGE REVEAL AFTER LOADER V34 START === */
+/*
+  Smooth page reveal after invite loader:
+  - page stays hidden only when JS arms this behavior;
+  - if JS fails, page remains visible by default;
+  - reveal starts after loader fade finishes.
+*/
+
+body.page-reveal-armed .page,
+body.page-reveal-armed .ambient-bg {
+  transition:
+    opacity 920ms ease,
+    transform 920ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    filter 920ms ease;
+  will-change: opacity, transform, filter;
+}
+
+body.page-reveal-armed:not(.page-revealed) .page {
+  opacity: 0;
+  transform: translateY(18px) scale(0.992);
+  filter: blur(8px);
+}
+
+body.page-reveal-armed:not(.page-revealed) .ambient-bg {
+  opacity: 0;
+  transform: scale(1.015);
+  filter: blur(10px);
+}
+
+body.page-reveal-armed.page-revealed .page,
+body.page-reveal-armed.page-revealed .ambient-bg {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+/* Make the first hero feel a bit more cinematic on reveal. */
+body.page-reveal-armed .block-hero {
+  transition:
+    opacity 980ms ease,
+    transform 980ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    filter 980ms ease;
+}
+
+body.page-reveal-armed:not(.page-revealed) .block-hero {
+  transform: translateY(12px) scale(0.988);
+}
+
+body.page-reveal-armed.page-revealed .block-hero {
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.page-reveal-armed .page,
+  body.page-reveal-armed .ambient-bg,
+  body.page-reveal-armed .block-hero {
+    transition: none !important;
+    transform: none !important;
+    filter: none !important;
+    opacity: 1 !important;
+  }
+}
+/* === KOLA PAGE REVEAL AFTER LOADER V34 END === */
+
