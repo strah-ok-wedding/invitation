@@ -12574,3 +12574,141 @@ body.page-reveal-armed:not(.page-revealed) .ambient-bg {
 }
 /* === KOLA STRONGER DETAILS FOOTER DECOR V56 END === */
 
+/* === KOLA RSVP HEADING OUTSIDE V57 START === */
+/*
+  RSVP heading:
+  - moved outside the form card in HTML;
+  - title uses the first calligraphy font;
+  - size matches other section headings;
+  - form card remains only for the form itself.
+*/
+
+.rsvp-block {
+  text-align: center !important;
+}
+
+.rsvp-block > .section-heading {
+  max-width: 430px !important;
+  margin: 0 auto 28px !important;
+  display: grid !important;
+  justify-items: center !important;
+  gap: 16px !important;
+  text-align: center !important;
+}
+
+.rsvp-block > .section-heading h2 {
+  margin: 0 !important;
+  font-family: var(--font-calligraphy, "Kola Calligraphy", cursive) !important;
+  font-size: clamp(2.36rem, 9.2vw, 3rem) !important;
+  font-weight: 400 !important;
+  line-height: 0.94 !important;
+  letter-spacing: -0.025em !important;
+  text-align: center !important;
+  color: var(--brown) !important;
+}
+
+.rsvp-block > .section-heading p {
+  max-width: 34ch !important;
+  margin: 0 auto !important;
+  color: var(--brown-soft) !important;
+  font-family: var(--font-base) !important;
+  font-size: 1rem !important;
+  line-height: 1.62 !important;
+  text-align: center !important;
+}
+
+/* The shell is now only the form card, so remove heading spacing assumptions inside it. */
+.rsvp-shell > .section-heading {
+  display: none !important;
+}
+
+.rsvp-shell {
+  margin-top: 0 !important;
+}
+
+.rsvp-form {
+  margin-top: 0 !important;
+}
+
+@media (min-width: 720px) {
+  .rsvp-block > .section-heading {
+    margin-bottom: 30px !important;
+  }
+
+  .rsvp-block > .section-heading h2 {
+    font-size: clamp(2.36rem, 9.2vw, 3rem) !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .rsvp-block > .section-heading {
+    max-width: 360px !important;
+    margin-bottom: 24px !important;
+    gap: 14px !important;
+  }
+
+  .rsvp-block > .section-heading h2 {
+    font-size: clamp(2.22rem, 9.6vw, 2.75rem) !important;
+  }
+
+  .rsvp-block > .section-heading p {
+    font-size: 0.96rem !important;
+  }
+}
+/* === KOLA RSVP HEADING OUTSIDE V57 END === */
+
+/* === KOLA RSVP DEADLINE HIGHLIGHT V58 START === */
+/*
+  RSVP intro:
+  - description is slightly smaller;
+  - deadline is highlighted as a soft elegant badge;
+  - form/backend unchanged.
+*/
+
+.rsvp-block > .section-heading p {
+  max-width: 33ch !important;
+  font-size: 0.92rem !important;
+  line-height: 1.62 !important;
+  color: rgba(68, 51, 43, 0.68) !important;
+}
+
+.rsvp-deadline-highlight {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  margin: 0 0.18em !important;
+  padding: 0.18em 0.62em 0.22em !important;
+
+  border-radius: 999px !important;
+  border: 1px solid rgba(103, 44, 39, 0.16) !important;
+
+  background:
+    radial-gradient(circle at 22% 22%, rgba(255, 255, 255, 0.52), transparent 4rem),
+    linear-gradient(135deg, rgba(214, 165, 154, 0.18), rgba(185, 188, 167, 0.18)) !important;
+
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.24),
+    0 8px 18px rgba(68, 51, 43, 0.07) !important;
+
+  color: rgba(103, 44, 39, 0.92) !important;
+  font-family: var(--font-base) !important;
+  font-size: 0.94em !important;
+  font-weight: 850 !important;
+  line-height: 1.15 !important;
+  letter-spacing: 0.01em !important;
+  white-space: nowrap !important;
+}
+
+@media (max-width: 390px) {
+  .rsvp-block > .section-heading p {
+    max-width: 31ch !important;
+    font-size: 0.88rem !important;
+  }
+
+  .rsvp-deadline-highlight {
+    padding: 0.16em 0.54em 0.2em !important;
+  }
+}
+/* === KOLA RSVP DEADLINE HIGHLIGHT V58 END === */
+
