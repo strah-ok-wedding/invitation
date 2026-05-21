@@ -9530,7 +9530,9 @@ body.page-reveal-armed.page-revealed .block-hero {
     opacity: 1 !important;
   }
 }
-/* === KOLA PAGE REVEAL AFTER LOADER V34 END === */\n\n
+/* === KOLA PAGE REVEAL AFTER LOADER V34 END === */
+
+
 
 /* === KOLA DRESS SLIDER HARD FIX V42 START === */
 /*
@@ -10478,4 +10480,769 @@ body.page-reveal-armed.page-revealed .block-hero {
   }
 }
 /* === KOLA DRESS TIGHTER FIGURE V46 END === */
+
+/* === KOLA CALENDAR PROGRAM VENUES V47 START === */
+/*
+  Calendar / program / venues polish:
+  - calendar year uses calligraphy font;
+  - calendar gets a subtle botanical ornament background;
+  - section headings are about 4pt larger;
+  - program separators become animated botanical branches;
+  - venue photo indicator now animates with image switch;
+  - venue cards and map buttons get more air.
+*/
+
+/* 1) All main section headings: + about 4pt / 5px */
+.date-block .section-heading h2,
+.program-block .section-heading h2,
+.places-block .section-heading h2,
+.dress-block .section-heading h2,
+.details-block .section-heading h2,
+.rsvp-block .section-heading h2,
+.closing-block .section-heading h2 {
+  font-size: clamp(2.62rem, 10.8vw, 4.35rem) !important;
+  line-height: 0.9 !important;
+}
+
+/* 2) Calendar: calligraphy year + botanical background */
+.calendar-card {
+  position: relative !important;
+  overflow: hidden !important;
+  isolation: isolate !important;
+}
+
+.calendar-card::before {
+  content: "" !important;
+  position: absolute !important;
+  right: -38px !important;
+  top: -30px !important;
+  z-index: -1 !important;
+
+  width: 178px !important;
+  height: 178px !important;
+
+  background-image: url("./assets/img/decor/calendar-botanical.svg?v=47") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: contain !important;
+
+  opacity: 0.13 !important;
+  transform: rotate(10deg) !important;
+  pointer-events: none !important;
+}
+
+.calendar-card::after {
+  content: "" !important;
+  position: absolute !important;
+  left: -42px !important;
+  bottom: -38px !important;
+  z-index: -1 !important;
+
+  width: 168px !important;
+  height: 168px !important;
+
+  background-image: url("./assets/img/decor/calendar-botanical.svg?v=47") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: contain !important;
+
+  opacity: 0.105 !important;
+  transform: rotate(-18deg) scaleX(-1) !important;
+  pointer-events: none !important;
+}
+
+.calendar-card__top strong {
+  font-family: var(--font-calligraphy, "Kola Calligraphy", cursive) !important;
+  font-size: clamp(1.72rem, 7.4vw, 2.45rem) !important;
+  font-weight: 400 !important;
+  line-height: 0.9 !important;
+  letter-spacing: 0.01em !important;
+  color: rgba(103, 44, 39, 0.90) !important;
+  transform: translateY(3px) !important;
+}
+
+/* 3) Program: replace hard dividers/lines with botanical separators */
+.program-line {
+  gap: 0 !important;
+  padding: 8px 0 0 !important;
+}
+
+.program-line::before {
+  display: none !important;
+  content: none !important;
+}
+
+.program-item {
+  position: relative !important;
+  margin: 0 !important;
+}
+
+.program-item:not(:last-child) {
+  padding-bottom: 58px !important;
+}
+
+.program-item:not(:last-child)::after {
+  content: "" !important;
+  display: block !important;
+
+  position: absolute !important;
+  left: 50% !important;
+  bottom: 12px !important;
+  z-index: 0 !important;
+
+  width: 142px !important;
+  height: 34px !important;
+
+  background-image: url("./assets/img/decor/calendar-botanical.svg?v=47") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: contain !important;
+
+  opacity: 0.34 !important;
+  transform: translateX(-50%) rotate(-1deg) !important;
+  transform-origin: center !important;
+  pointer-events: none !important;
+
+  animation: program-botanical-separator-v47 4.8s ease-in-out infinite;
+}
+
+.program-item:nth-child(2)::after {
+  animation-delay: 0.9s !important;
+  transform: translateX(-50%) rotate(2deg) scaleX(-1) !important;
+}
+
+.program-card {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+@keyframes program-botanical-separator-v47 {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: translateX(-50%) translateY(0) rotate(-1deg);
+  }
+
+  50% {
+    opacity: 0.43;
+    transform: translateX(-50%) translateY(-3px) rotate(1deg);
+  }
+}
+
+/* 4) Venue cards: more air between cards and inside buttons */
+.venue-grid {
+  gap: 32px !important;
+}
+
+.venue-card {
+  overflow: hidden !important;
+}
+
+.venue-card + .venue-card {
+  margin-top: 8px !important;
+}
+
+.venue-card__body {
+  gap: 15px !important;
+  padding-top: 22px !important;
+  padding-bottom: 24px !important;
+}
+
+.venue-card__body p {
+  margin-bottom: 4px !important;
+}
+
+.venue-card__body .button,
+.venue-card .button {
+  margin-top: 10px !important;
+  padding: 0.98rem 1.18rem !important;
+  min-height: 48px !important;
+}
+
+/* 5) Venue photo indicator: now it changes together with auto photos */
+.venue-card__media--auto {
+  position: relative !important;
+}
+
+.venue-card__media--auto::after {
+  content: "" !important;
+  position: absolute !important;
+  right: 14px !important;
+  bottom: 14px !important;
+  z-index: 4 !important;
+
+  width: 48px !important;
+  height: 9px !important;
+  border-radius: 999px !important;
+
+  background:
+    radial-gradient(circle at 25% 50%, rgba(255, 248, 237, 0.96) 0 4px, transparent 4.5px),
+    radial-gradient(circle at 75% 50%, rgba(255, 248, 237, 0.40) 0 4px, transparent 4.5px),
+    rgba(46, 35, 31, 0.16) !important;
+
+  box-shadow:
+    0 8px 18px rgba(46, 35, 31, 0.18),
+    inset 0 0 0 1px rgba(255, 248, 237, 0.22) !important;
+
+  opacity: 0.96 !important;
+  animation: venue-photo-dots-v47 5s ease-in-out infinite !important;
+}
+
+@keyframes venue-photo-dots-v47 {
+  0%,
+  38%,
+  100% {
+    background:
+      radial-gradient(circle at 25% 50%, rgba(255, 248, 237, 0.98) 0 4px, transparent 4.5px),
+      radial-gradient(circle at 75% 50%, rgba(255, 248, 237, 0.38) 0 4px, transparent 4.5px),
+      rgba(46, 35, 31, 0.16);
+  }
+
+  50%,
+  88% {
+    background:
+      radial-gradient(circle at 25% 50%, rgba(255, 248, 237, 0.38) 0 4px, transparent 4.5px),
+      radial-gradient(circle at 75% 50%, rgba(255, 248, 237, 0.98) 0 4px, transparent 4.5px),
+      rgba(46, 35, 31, 0.16);
+  }
+}
+
+@media (min-width: 720px) {
+  .date-block .section-heading h2,
+  .program-block .section-heading h2,
+  .places-block .section-heading h2,
+  .dress-block .section-heading h2,
+  .details-block .section-heading h2,
+  .rsvp-block .section-heading h2,
+  .closing-block .section-heading h2 {
+    font-size: clamp(2.62rem, 10.8vw, 4.35rem) !important;
+  }
+
+  .venue-grid {
+    gap: 34px !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .date-block .section-heading h2,
+  .program-block .section-heading h2,
+  .places-block .section-heading h2,
+  .dress-block .section-heading h2,
+  .details-block .section-heading h2,
+  .rsvp-block .section-heading h2,
+  .closing-block .section-heading h2 {
+    font-size: clamp(2.42rem, 11vw, 3.65rem) !important;
+  }
+
+  .calendar-card::before {
+    right: -48px !important;
+    top: -36px !important;
+    width: 158px !important;
+    height: 158px !important;
+  }
+
+  .calendar-card::after {
+    left: -52px !important;
+    bottom: -42px !important;
+    width: 150px !important;
+    height: 150px !important;
+  }
+
+  .program-item:not(:last-child) {
+    padding-bottom: 52px !important;
+  }
+
+  .program-item:not(:last-child)::after {
+    width: 126px !important;
+    height: 30px !important;
+  }
+
+  .venue-grid {
+    gap: 30px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .program-item:not(:last-child)::after,
+  .venue-card__media--auto::after {
+    animation: none !important;
+  }
+}
+/* === KOLA CALENDAR PROGRAM VENUES V47 END === */
+
+/* === KOLA PROGRAM HEADINGS VENUES V48 START === */
+/*
+  Fix after V47:
+  - section headings use the mobile-like size on desktop too;
+  - program day separators are clean botanical SVG dividers;
+  - old horizontal lines/artifacts are suppressed;
+  - venue photo dots are removed completely.
+*/
+
+/* 1) Заголовки блоков: единый mobile-like размер на всех устройствах */
+.page .section-heading h2,
+.page .intro-copy h2,
+.page .block:not(.block-hero) > h2 {
+  max-width: 390px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+
+  font-size: clamp(2.36rem, 9.2vw, 3rem) !important;
+  line-height: 0.94 !important;
+  letter-spacing: -0.025em !important;
+  text-align: center !important;
+}
+
+/* Чтобы обычный текст под заголовками не расползался на ПК */
+.page .section-heading p,
+.page .intro-copy p {
+  max-width: 390px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+}
+
+/* 2) Программа дня: убираем старые линии и артефакты */
+.program-block {
+  overflow: visible !important;
+}
+
+.program-line {
+  position: relative !important;
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 0 !important;
+  padding: 6px 0 0 !important;
+}
+
+.program-line::before,
+.program-line::after {
+  content: none !important;
+  display: none !important;
+}
+
+.program-item {
+  position: relative !important;
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  justify-items: center !important;
+  gap: 16px !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  border: 0 !important;
+  border-top: 0 !important;
+  border-bottom: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+.program-item::before {
+  content: none !important;
+  display: none !important;
+}
+
+/* Воздух между пунктами + новый разделитель */
+.program-item:not(:last-child) {
+  padding-bottom: 82px !important;
+  margin-bottom: 22px !important;
+}
+
+.program-item:not(:last-child)::after {
+  content: "" !important;
+  position: absolute !important;
+  left: 50% !important;
+  bottom: 24px !important;
+  z-index: 0 !important;
+
+  width: 176px !important;
+  height: 42px !important;
+
+  background-image: url("./assets/img/decor/program-separator.svg?v=48") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: contain !important;
+
+  opacity: 0.58 !important;
+  transform: translateX(-50%) rotate(-1deg) !important;
+  pointer-events: none !important;
+
+  animation: program-separator-float-v48 5.2s ease-in-out infinite !important;
+}
+
+/* Чередуем направление, чтобы не было ощущения копипасты */
+.program-item:nth-child(even)::after {
+  transform: translateX(-50%) rotate(2deg) scaleX(-1) !important;
+  animation-delay: 0.7s !important;
+}
+
+.program-card {
+  position: relative !important;
+  z-index: 1 !important;
+
+  border: 0 !important;
+  border-top: 0 !important;
+  border-bottom: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+.program-card::before,
+.program-card::after {
+  content: none !important;
+  display: none !important;
+}
+
+.program-time {
+  margin-bottom: 2px !important;
+}
+
+@keyframes program-separator-float-v48 {
+  0%,
+  100% {
+    opacity: 0.46;
+    translate: 0 0;
+  }
+
+  50% {
+    opacity: 0.66;
+    translate: 0 -3px;
+  }
+}
+
+/* 3) Места встречи: убираем точки индикатора с фото полностью */
+.venue-card__media--auto::after,
+.venue-card__media::after {
+  content: none !important;
+  display: none !important;
+  animation: none !important;
+  background: none !important;
+  box-shadow: none !important;
+}
+
+/* Сохраняем воздух между карточками и кнопкой */
+.venue-grid {
+  gap: 34px !important;
+}
+
+.venue-card__body {
+  gap: 16px !important;
+  padding-top: 24px !important;
+  padding-bottom: 26px !important;
+}
+
+.venue-card__body .button,
+.venue-card .button {
+  margin-top: 12px !important;
+  margin-bottom: 2px !important;
+}
+
+/* Desktop не должен снова делать заголовки огромными */
+@media (min-width: 720px) {
+  .page .section-heading h2,
+  .page .intro-copy h2,
+  .page .block:not(.block-hero) > h2 {
+    font-size: clamp(2.36rem, 9.2vw, 3rem) !important;
+    max-width: 390px !important;
+  }
+
+  .program-item:not(:last-child) {
+    padding-bottom: 84px !important;
+    margin-bottom: 24px !important;
+  }
+
+  .program-item:not(:last-child)::after {
+    width: 182px !important;
+    height: 44px !important;
+    bottom: 25px !important;
+  }
+
+  .venue-grid {
+    gap: 36px !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .page .section-heading h2,
+  .page .intro-copy h2,
+  .page .block:not(.block-hero) > h2 {
+    font-size: clamp(2.22rem, 9.6vw, 2.75rem) !important;
+    max-width: 360px !important;
+  }
+
+  .program-item:not(:last-child) {
+    padding-bottom: 74px !important;
+    margin-bottom: 18px !important;
+  }
+
+  .program-item:not(:last-child)::after {
+    width: 156px !important;
+    height: 38px !important;
+    bottom: 22px !important;
+  }
+
+  .venue-grid {
+    gap: 30px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .program-item:not(:last-child)::after {
+    animation: none !important;
+  }
+}
+/* === KOLA PROGRAM HEADINGS VENUES V48 END === */
+
+/* === KOLA VENUE RSVP DRINKS V49 START === */
+/*
+  V49:
+  - venue buttons have equal vertical rhythm;
+  - restaurant map button gets the same air as ZAGS;
+  - drinks textarea becomes compact checkboxes + custom drink field;
+  - backend still receives one hidden field: name="drinks".
+*/
+
+/* Places: same rhythm for both venue cards. */
+.venue-card__body {
+  display: grid !important;
+  justify-items: center !important;
+  text-align: center !important;
+  gap: 16px !important;
+  padding-top: 24px !important;
+  padding-bottom: 28px !important;
+}
+
+.venue-card__body h3 {
+  margin-bottom: 0 !important;
+}
+
+.venue-card__body p {
+  margin: 0 auto !important;
+  max-width: 28ch !important;
+  line-height: 1.55 !important;
+}
+
+.venue-card__body .button,
+.venue-card .button {
+  margin-top: 12px !important;
+  margin-bottom: 0 !important;
+  min-height: 48px !important;
+}
+
+/* Restaurant has longer title/address, so normalize button air explicitly. */
+.venue-grid .venue-card:nth-child(2) .venue-card__body {
+  gap: 17px !important;
+  padding-bottom: 30px !important;
+}
+
+.venue-grid .venue-card:nth-child(2) .venue-card__body .button {
+  margin-top: 14px !important;
+}
+
+/* RSVP drinks */
+.drinks-fieldset {
+  display: grid !important;
+  gap: 14px !important;
+}
+
+.drink-options {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 10px !important;
+}
+
+.drink-option {
+  position: relative !important;
+  display: grid !important;
+  grid-template-columns: 20px minmax(0, 1fr) !important;
+  align-items: center !important;
+  gap: 9px !important;
+
+  min-height: 46px !important;
+  padding: 11px 12px !important;
+
+  border: 1px solid rgba(68, 51, 43, 0.12) !important;
+  border-radius: 18px !important;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255,255,255,0.48), transparent 4rem),
+    rgba(255, 248, 237, 0.58) !important;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.20),
+    0 9px 20px rgba(68, 51, 43, 0.045) !important;
+
+  color: rgba(59, 42, 36, 0.86) !important;
+  font-family: var(--font-base) !important;
+  font-size: 0.9rem !important;
+  line-height: 1.15 !important;
+  cursor: pointer !important;
+  user-select: none !important;
+
+  transition:
+    border-color 160ms ease,
+    background-color 160ms ease,
+    transform 160ms ease,
+    box-shadow 160ms ease !important;
+}
+
+.drink-option:hover {
+  transform: translateY(-1px) !important;
+  border-color: rgba(103, 44, 39, 0.20) !important;
+}
+
+.drink-option:has(input:checked) {
+  border-color: rgba(103, 44, 39, 0.34) !important;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255,255,255,0.48), transparent 4rem),
+    rgba(214, 165, 154, 0.16) !important;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.22),
+    0 12px 24px rgba(103, 44, 39, 0.08) !important;
+}
+
+.drink-option input {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+
+  width: 20px !important;
+  height: 20px !important;
+  margin: 0 !important;
+
+  border-radius: 7px !important;
+  border: 1px solid rgba(68, 51, 43, 0.22) !important;
+  background: rgba(255, 248, 237, 0.76) !important;
+  box-shadow: inset 0 1px 2px rgba(68, 51, 43, 0.08) !important;
+
+  display: grid !important;
+  place-items: center !important;
+}
+
+.drink-option input::after {
+  content: "" !important;
+  width: 9px !important;
+  height: 9px !important;
+  border-radius: 4px !important;
+  background: rgba(103, 44, 39, 0.84) !important;
+  transform: scale(0) !important;
+  transition: transform 140ms ease !important;
+}
+
+.drink-option input:checked::after {
+  transform: scale(1) !important;
+}
+
+.drink-option input:focus-visible {
+  outline: 2px solid rgba(103, 44, 39, 0.44) !important;
+  outline-offset: 3px !important;
+}
+
+.drink-custom {
+  display: grid !important;
+  gap: 8px !important;
+  margin-top: 2px !important;
+}
+
+.drink-custom span {
+  color: rgba(59, 42, 36, 0.74) !important;
+  font-family: var(--font-base) !important;
+  font-size: 0.88rem !important;
+  font-weight: 800 !important;
+}
+
+.drink-custom input {
+  width: 100% !important;
+}
+
+@media (max-width: 390px) {
+  .drink-options {
+    gap: 8px !important;
+  }
+
+  .drink-option {
+    grid-template-columns: 18px minmax(0, 1fr) !important;
+    gap: 8px !important;
+    padding: 10px 10px !important;
+    border-radius: 16px !important;
+    font-size: 0.84rem !important;
+  }
+
+  .drink-option input {
+    width: 18px !important;
+    height: 18px !important;
+  }
+}
+/* === KOLA VENUE RSVP DRINKS V49 END === */
+
+/* === KOLA EMPTY PAGE AND DETAILS SVG FIX V50 START === */
+/*
+  Fix:
+  - page must never stay blank after loader;
+  - detail icons use generated SVG assets;
+  - no RSVP endpoint changes.
+*/
+
+/* Failsafe: if JS reveal logic breaks, page becomes visible anyway. */
+body.page-reveal-armed:not(.page-revealed) .page,
+body.page-reveal-armed:not(.page-revealed) .ambient-bg {
+  animation: kola-page-reveal-failsafe-v50 1ms linear 9.2s forwards;
+}
+
+@keyframes kola-page-reveal-failsafe-v50 {
+  to {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+
+/* Details SVG icons */
+.detail-elegant-icon--image {
+  overflow: visible !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.detail-elegant-icon--image img {
+  width: 88px !important;
+  height: 88px !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  display: block !important;
+  filter: drop-shadow(0 10px 18px rgba(68, 51, 43, 0.08));
+}
+
+.detail-elegant-card--book .detail-elegant-icon--image img {
+  width: 94px !important;
+  height: 94px !important;
+}
+
+.detail-elegant-card--flowers .detail-elegant-icon--image img {
+  width: 96px !important;
+  height: 96px !important;
+}
+
+@media (max-width: 430px) {
+  .detail-elegant-card {
+    grid-template-columns: 82px minmax(0, 1fr) !important;
+  }
+
+  .detail-elegant-icon--image img,
+  .detail-elegant-card--book .detail-elegant-icon--image img,
+  .detail-elegant-card--flowers .detail-elegant-icon--image img {
+    width: 78px !important;
+    height: 78px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.page-reveal-armed:not(.page-revealed) .page,
+  body.page-reveal-armed:not(.page-revealed) .ambient-bg {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}
+/* === KOLA EMPTY PAGE AND DETAILS SVG FIX V50 END === */
 

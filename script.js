@@ -841,3 +841,84 @@ toneButtons.forEach((button) => {
 })();
 /* === KOLA DRESS SLIDER HARD FIX V42 END === */
 
+/* === KOLA RSVP DRINKS CHECKBOXES V49 START === */
+/*
+  Keeps Google Apps Script compatibility:
+  visible checkboxes have no name,
+  final value is written to hidden input name="drinks".
+*/
+(() => {
+  const fieldset = document.querySelector("[data-drinks-fieldset]");
+  if (!fieldset) return;
+
+  const output = fieldset.querySelector("[data-drinks-output]");
+  const options = Array.from(fieldset.querySelectorAll("[data-drink-option]"));
+  const custom = fieldset.querySelector("[data-custom-drink]");
+  const form = document.querySelector("#rsvp-form");
+
+  if (!output || !options.length) return;
+
+  const syncDrinks = () => {
+    const selected = options
+      .filter((option) => option.checked)
+      .map((option) => option.value.trim())
+      .filter(Boolean);
+
+    const customValue = custom?.value?.trim() || "";
+
+    if (customValue) {
+      selected.push(`Свой напиток: ${customValue}`);
+    }
+
+    output.value = selected.join(", ");
+  };
+
+  options.forEach((option) => {
+    option.addEventListener("change", syncDrinks);
+  });
+
+  custom?.addEventListener("input", syncDrinks);
+
+  form?.addEventListener("submit", syncDrinks);
+
+  syncDrinks();
+})();
+/* === KOLA RSVP DRINKS CHECKBOXES V49 END === */
+
+/* === KOLA EMPTY PAGE FAILSAFE V50 START === */
+/*
+  Hard safety:
+  if loader/page reveal state gets stuck, show page and start hero.
+*/
+(() => {
+  const body = document.body;
+  if (!body) return;
+
+  const showPage = () => {
+    body.classList.remove("loader-active");
+    body.classList.add("page-revealed");
+    body.classList.add("hero-slideshow-ready");
+
+    document.querySelectorAll("[data-reveal]").forEach((item) => {
+      item.classList.add("is-visible");
+    });
+  };
+
+  const loader = document.querySelector(".kola-loader, .invite-loader");
+
+  if (loader) {
+    loader.addEventListener(
+      "transitionend",
+      () => {
+        if (loader.classList.contains("is-hidden")) {
+          window.setTimeout(showPage, 80);
+        }
+      },
+      { passive: true },
+    );
+  }
+
+  window.setTimeout(showPage, 9200);
+})();
+/* === KOLA EMPTY PAGE FAILSAFE V50 END === */
+
